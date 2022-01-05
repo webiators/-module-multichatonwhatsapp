@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category   Webiators
+ * @package    Webiators_MultiChatOnWhatsapp
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com ).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Webiators_MultiChatOnWhatsapp::view" title="Multi Chat" module="Webiators_MultiChatOnWhatsapp"  resource="Webiators_MultiChatOnWhatsapp::view"  parent="Webiators_Root::wtrootmenu" />
+        <add id="Webiators_MultiChatOnWhatsapp::menu" title="Manage Agent Grid" module="Webiators_MultiChatOnWhatsapp" parent="Webiators_MultiChatOnWhatsapp::view" action="multichatonwhatsapp/agent/index" resource="Webiators_MultiChatOnWhatsapp::menu"/>
+        <add id="Webiators_MultiChatOnWhatsapp::config_webiators_multichatonwhatsapp" title="Settings"  module="Webiators_MultiChatOnWhatsapp" parent="Webiators_MultiChatOnWhatsapp::view" action="adminhtml/system_config/edit/section/multichat_on_whatsapp" resource="Webiators_MultiChatOnWhatsapp::config_webiators_multichatonwhatsapp"/>
+    </menu>
+</config>

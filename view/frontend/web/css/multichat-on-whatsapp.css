@@ -1,0 +1,252 @@
+div.wt-multichatbox.bottom-left div.wt-multichatwhatsappicon .whatsapp_a{
+    border: medium none;
+    border-radius: 50%;
+    box-shadow: none;
+    height: 60px;
+    line-height: normal;
+    opacity: 0.9;
+    outline: medium none;
+    padding: 0;
+    position: fixed;
+    text-align: center;
+    text-decoration: none;
+    width: 60px;
+    bottom: 35px;
+    margin-left: -25px;
+    z-index: 9;
+}
+
+div.wt-multichatbox.bottom-right div.wt-multichatwhatsappicon .whatsapp_a{
+    border: medium none;
+    border-radius: 50%;
+    box-shadow: none;
+    height: 60px;
+    line-height: normal;
+    opacity: 0.9;
+    outline: medium none;
+    padding: 0;
+    position: fixed;
+    text-align: center;
+    text-decoration: none;
+    width: 60px;
+    bottom: 35px;
+    right: 35px;
+    z-index: 9;
+}
+
+div.wt-multichatwhatsappicon i.fa.fa-whatsapp{
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+div.wt-multichatbox.bottom-left{
+    width: auto;
+    height: auto;
+    border-radius:6px;
+    position:fixed;
+    top:121px;
+    left: 50px;
+    z-index: 9;
+    }
+
+div.wt-multichatbox.bottom-right {
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    position: fixed;
+    top: 121px;
+    right: 6%;
+    margin-right: 0px;
+    z-index: 9;
+    }
+
+div.wt-multichatbox.bottom-left .wt-multiagentlist{
+    position:fixed;
+    left: 50px;
+    max-width: 300px;
+    bottom: 110px;
+    height: auto;
+    background-color: #fbfbfb;
+    display: none;
+        }
+
+div.wt-multichatbox.bottom-right .wt-multiagentlist{
+    position:fixed;
+    right: 50px;
+    max-width: 300px;
+    bottom: 118px;
+    height: auto;
+    background-color: #fbfbfb;
+    display: none;
+    }
+
+.top-header{
+    height:69px;
+    border-bottom:1px solid #d8dfe3;    
+    }
+
+.wt-multichat-logo img {
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+
+    }
+
+.wt-heading p {
+
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 13px;
+    margin-left: 65px;
+    margin-top: -50px;
+    }
+
+.close-btn {
+    margin-left: 92%;
+    color: black;
+    margin-top: -65px;
+    }
+
+.agent{
+    height:70px;
+    border-bottom:1px solid #e7ebee;        
+    position:relative;
+    }
+
+.agent:hover{
+    background:#f1f4f6;
+    cursor:pointer;
+    }
+.agent img{
+    width:40px;
+    border-radius:50%;
+    margin:15px;
+    float:left;
+   }
+.agent p{
+    padding:5px 0 0 0;         
+    float:left;
+    width:220px;
+    margin: 0px;
+   }
+.agent p strong{
+    font-weight:600;
+    font-size:15px;
+    color:#597a96;  
+
+}
+.agent p span{
+    font-size:13px;
+    font-weight:400;
+    color:#aab8c2;
+}
+
+.agent span.agent_depart {
+    color: #545656 !important;
+}
+
+div.wt-multichatbox.bottom-left .wt-multiagentlist:after {
+    content: "";
+    position: absolute;
+    border-left: 24px solid var(--tooltip-box-bubble-bgcolor);
+    border-right: 12px solid transparent;
+    border-top: 12px solid var(--tooltip-box-bubble-bgcolor);
+    border-bottom: 20px solid transparent;
+    left: 21px;
+    bottom: -20px;
+    z-index: -9;
+}
+
+div.wt-multichatbox.bottom-right .wt-multiagentlist:after{
+    content: '';
+    position: absolute;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 23px 24px 0;
+    border-color: transparent var(--tooltip-box-bubble-bgcolor);
+    bottom: -24px;
+    left: 85%;
+    z-index: -9;
+}
+
+/*for rotate icon*/
+
+div.wt-multichatbox .wt-multichatwhatsappicon span.whatsapp_a.rotate i.fa.fa-whatsapp{
+    transition: all ease-in 1s;
+}
+
+div.wt-multichatbox .wt-multichatwhatsappicon span.whatsapp_a.rotate i.fa.fa-whatsapp:hover{
+    font-size: 40px;
+    transform: rotate(360deg);
+}
+
+/*for bounce for bottom icon*/
+div.wt-multichatbox .wt-multichatwhatsappicon span.whatsapp_a.bounce{
+    -webkit-animation:bounce 1s infinite;
+}
+
+@-webkit-keyframes bounce{
+  0%       { bottom:5px; }
+  25%, 75% { bottom:15px; }
+  50%      { bottom:20px; }
+  100%     {bottom:0;}
+}
+
+/*for pulse icon*/
+div.wt-multichatbox .wt-multichatwhatsappicon span.whatsapp_a.pulse{
+    animation: shadow-pulse 1s infinite;
+}
+@keyframes shadow-pulse
+{
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+}
+100% {
+    box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+}
+}
+
+/*for wiggle icon*/
+div.wt-multichatbox .wt-multichatwhatsappicon span.whatsapp_a.wiggle{
+    animation: wiggle 75ms infinite;
+    animation-timing-function: linear;   
+}
+
+@keyframes wiggle{
+  0% { transform: translate(2px, 0); }
+  50% { transform: translate(-2px, 0); }
+  100% { transform: translate(2px, 0); }
+}
+
+/*for zoom icon*/
+div.wt-multichatbox .wt-multichatwhatsappicon span.whatsapp_a.zoom:hover {
+    transform: scale(1.1);
+    transition: all ease 500ms;
+}
+
+/*for wiggle icon on hover*/
+div.wt-multichatbox .wt-multichatwhatsappicon span.whatsapp_a.wiggle_on_hover:hover{ 
+  animation: wiggle 75ms infinite;
+  animation-timing-function: linear;   
+}
+
+@keyframes wiggle {
+  0% { transform: translate(2px, 0); }
+  50% { transform: translate(-2px, 0); }
+  100% { transform: translate(2px, 0); }
+}
+
+/*for pulse icon on hover*/
+div.wt-multichatbox .wt-multichatwhatsappicon span.whatsapp_a.pulse_on_hover:hover{
+    animation: shadow-pulse-hover 1s infinite;
+}
+@keyframes shadow-pulse-hover
+{
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+}
+100% {
+    box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+}
+}

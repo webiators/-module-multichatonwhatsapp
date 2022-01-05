@@ -1,0 +1,87 @@
+<?php
+/**
+ * @category   Webiators
+ * @package    Webiators_MultiChatOnWhatsapp
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com/ ).
+ */
+?>
+<?php   
+    $helper = $this->helper('Webiators\MultiChatOnWhatsapp\Helper\Data');
+    $BrandLogoUpload = $helper->getBrandLogoUpload();
+    $MultichatwhatsappHeaderText = $helper->getMultichatwhatsappHeaderText();
+    $MultichatwhatsappIconPositionOption = $helper->getMultichatwhatsappIconPositionOption();
+    $MultichatwhatsappIconBgColorOption = $helper->getMultichatwhatsappIconBgColorOption();
+    $MultichatwhatsappIconColorOption = $helper->getMultichatwhatsappIconColorOption();
+    $MultichatwhatsappBoxTopHeaderBgColorOption = $helper->getMultichatwhatsappBoxTopHeaderBgColorOption();
+    $MultichatwhatsappBoxBubbleColorOption = $helper->getMultichatwhatsappBoxBubbleColorOption();
+    $MultichatwhatsappIconEffectOption = $helper->getMultichatwhatsappIconEffectOption();
+    $MultichatwhatsappAgentHoverColorOption = $helper->getMultichatwhatsappAgentHoverColorOption();
+?>
+<?php
+$agents = $block->getAgents();
+$mediaUrl = $block->getMediaUrl();
+?>
+
+<?php if($helper->getMultichatOnWhatsappEnable()): ?>
+
+<div class="wt-multichatbox <?php echo $MultichatwhatsappIconPositionOption; ?>">
+        <!-- Basic whatsapp icon -->
+        <div class="wt-multichatwhatsappicon">
+            <span class="whatsapp_a <?php echo $MultichatwhatsappIconEffectOption; ?>" style="background: <?php echo'#'.$MultichatwhatsappIconBgColorOption; ?>" target="_blank">
+                <i class="fa fa-whatsapp" style="color: <?php echo'#'.$MultichatwhatsappIconColorOption; ?>" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- Multichat agents data -->
+        <div class="wt-multiagentlist" style="background: <?php echo'#'.$MultichatwhatsappBoxBubbleColorOption; ?>;--tooltip-box-bubble-bgcolor: <?php echo'#'.$MultichatwhatsappBoxBubbleColorOption; ?>; ">
+            <div class="top-header" style="background: <?php echo'#'.$MultichatwhatsappBoxTopHeaderBgColorOption; ?>">
+                <div class="wt-multichat-logo" style="float:left">
+                 <img src="<?php echo $block->getMediaUrl() .'logo/' ?><?php echo $BrandLogoUpload; ?>" width= "50px" height = "50px"/>
+                </div>
+
+                 <div class="wt-heading" style="float:right">
+                     <p><?php echo $MultichatwhatsappHeaderText; ?></p>
+                     <div class="close-btn"><span><i class="fa fa-times"></i></span></div>
+                 </div>  
+            </div>
+
+            <div class="wt-agents">
+                <?php foreach ($agents as $agent): ?>
+                    <?php $agentwhatsappNumber = $agent->getMobileNo(); ?>
+                    <a href="https://wa.me/<?php if(isset($agentwhatsappNumber)){ echo $agentwhatsappNumber; }; ?>?text=<?php echo $agent->getDefaultMessage(); ?>" class="whatsapp_a btn-mobile" target="_blank">
+                        <div class="agent">
+                            <img class="agent_profile" src="<?php echo $block->getMediaUrl() .'logo/image/' ?><?php echo $agent->getLogo(); ?>" alt="" border=3 height=50 width=50></img>
+                            <p>
+                                <strong class="agent_name"><?php echo $agent->getAgentName(); ?></strong>
+                                <span class="agent_depart"><?php echo $agent->getAgentDepartment(); ?></span>
+                            </p>
+                            <p class= "wt-show-default-msg">
+                                <span class="agent_default-msg"><?php echo $agent->getDefaultMessage(); ?></span>
+                            </p>
+                        </div>
+                    </a> 
+                <?php endforeach; ?>            
+            </div>
+        </div>
+</div>
+<?php endif; ?>
+
+<script>
+    require([
+        'jquery'
+        ],
+        function ($) {
+            
+            $(document).ready(function(){
+              $(".wt-multichatwhatsappicon").click(function(){
+                $(".wt-multiagentlist").fadeToggle('slow');
+                });
+
+              $(".close-btn").click(function(){
+                $(".wt-multiagentlist").fadeOut('slow');
+                });
+
+            });
+
+        });
+</script>

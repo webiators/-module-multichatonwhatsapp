@@ -1,0 +1,21 @@
+{
+    "name": "webiators/module-multichatonwhatsapp",
+    "description": "MultiChat On Whatsapp for Magento 2 by Webiators allows your visitors to  chat with you on WhatsApp.",
+    "require": {
+        "webiators\/module-root": ">=1.0.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Webiators\\MultiChatOnWhatsapp\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

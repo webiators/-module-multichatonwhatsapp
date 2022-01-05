@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category   Webiators
+ * @package    Webiators_MultiChatOnWhatsapp
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com ).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- For Agent -->
+    <virtualType name="WebiatorsMultiChatOnWhatsappAgentFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="WebiatorsMultiChatOnWhatsappAgentFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Webiators\MultiChatOnWhatsapp\Model\ResourceModel\Agent\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">WebiatorsMultiChatOnWhatsappAgentFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Webiators\MultiChatOnWhatsapp\Model\ResourceModel\Agent\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">webiators_multichat_agent</argument>
+            <argument name="eventPrefix" xsi:type="string">webiators_multichatonwhatsapp_agent_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">agent_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Webiators\MultiChatOnWhatsapp\Model\ResourceModel\Agent</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="webiators_multichatonwhatsapp_agent_listing_data_source" xsi:type="string">Webiators\MultiChatOnWhatsapp\Model\ResourceModel\Agent\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Webiators\MultiChatOnWhatsapp\Ui\Component\MassAction\Status\Options">
+    <arguments>
+        <argument name="data" xsi:type="array">
+            <item name="urlPath" xsi:type="string">*/*/massStatus</item>
+            <item name="paramName" xsi:type="string">status</item>
+            <item name="confirm" xsi:type="array">
+                <item name="title" xsi:type="string" translatable="true">Change Status</item>
+                <item name="message" xsi:type="string" translatable="true">Are you sure you wan't to update selected items status?</item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+
+<!-- Image Uploader -->
+<virtualType name="VirtualTypeName" type="Magento\Catalog\Model\ImageUploader">
+ <arguments>
+  <argument name="baseTmpPath" xsi:type="string">logo/image</argument>
+  <argument name="basePath" xsi:type="string">logo/image</argument>
+  <argument name="allowedExtensions" xsi:type="array">
+   <item name="jpg" xsi:type="string">jpg</item>
+   <item name="jpeg" xsi:type="string">jpeg</item>
+   <item name="gif" xsi:type="string">gif</item>
+   <item name="png" xsi:type="string">png</item>
+</argument>
+</arguments>
+</virtualType>
+<type name="Webiators\MultiChatOnWhatsapp\Controller\Adminhtml\Agent\Uploader">
+ <arguments>
+  <argument name="imageUploader" xsi:type="object">VirtualTypeName</argument>
+</arguments>
+</type>
+<!-- End Image Uploader -->
+</config>

@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ *
+ * @category   Webiators
+ * @package    Webiators_MultiChatOnWhatsapp
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com/ ).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<multichat_on_whatsapp>
+			<general_settings>
+				<enable>1</enable>
+
+				<multichatwhatsapp_icon_position_option>bottom-right</multichatwhatsapp_icon_position_option>
+
+				<multichatwhatsapp_header_text>Choose one of our representatives below to chat on WhatsApp.</multichatwhatsapp_header_text>
+
+				<multichatwhatsapp_icon_position_option>bottom-right</multichatwhatsapp_icon_position_option>
+
+				<multichatwhatsapp_icon_bg_color_option>32BB05</multichatwhatsapp_icon_bg_color_option>
+
+				<multichatwhatsapp_icon_color_option>FFFFFF</multichatwhatsapp_icon_color_option>
+
+				<multichatwhatsapp_box_top_header_bg_color_option>E2EFEE</multichatwhatsapp_box_top_header_bg_color_option>
+
+				<multichatwhatsapp_box_bubble_color_option>F3F3F3</multichatwhatsapp_box_bubble_color_option>
+
+				<multichatwhatsapp_agent_hover_color_option>E2EFEE</multichatwhatsapp_agent_hover_color_option>
+
+				<multichatwhatsapp_icon_effect_option>none</multichatwhatsapp_icon_effect_option>
+
+			</general_settings>
+		</multichat_on_whatsapp>
+	</default>
+</config>

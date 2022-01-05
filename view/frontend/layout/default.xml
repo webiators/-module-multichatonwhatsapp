@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category   Webiators
+ * @package    Webiators_MultiChatOnWhatsapp
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com/ ).
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+        <css src="Webiators_MultiChatOnWhatsapp::css/multichat-on-whatsapp.css" />
+        <css src="Webiators_MultiChatOnWhatsapp::css/fontawesome/css/font-awesome.css"/>
+		<css src="Webiators_MultiChatOnWhatsapp::css/fontawesome/css/font-awesome.min.css"/>
+    </head>
+	<body>
+		<referenceContainer name="before.body.end">
+			<block class="Webiators\MultiChatOnWhatsapp\Block\Agent" name="wt_multichat_on_whatsapp" 
+                template="Webiators_MultiChatOnWhatsapp::multichat-button.phtml" 
+                before="before.body.end">
+            </block>
+		</referenceContainer>
+	</body>
+</page>
